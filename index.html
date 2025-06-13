@@ -111,7 +111,7 @@
       const beta = parseFloat(document.getElementById("beta").value);
 
       const x = [], Pa_y = [], AOQ_y = [], ITP_y = [];
-      const step = 0.0001;
+      const step = 0.00001;
       const max_p = (dist === "hypergeometric") ? 1 : 0.2;
 
       for (let p = 0.000; p <= max_p; p += step) {
@@ -172,14 +172,14 @@
           y: [0, 1],
           mode: "lines",
           line: { dash: "dash", color: "orange" },
-          name: `AQL: ${AQL.toFixed(3)}`
+          name: `AQL: ${AQL.toFixed(4)}`
         });
         oc_traces.push({
           x: [AQL],
           y: [1 - alpha],
           mode: "markers+text",
           marker: { color: "orange", size: 8 },
-          text: [`(${AQL.toFixed(3)}, ${(1 - alpha).toFixed(3)})`],
+          text: [`(${AQL.toFixed(4)}, ${(1 - alpha).toFixed(4)})`],
           textposition: "top right",
           name: "AQL marker"
         });
@@ -190,14 +190,14 @@
           y: [0, 1],
           mode: "lines",
           line: { dash: "dot", color: "purple" },
-          name: `LQL: ${LQL.toFixed(3)}`
+          name: `LQL: ${LQL.toFixed(4)}`
         });
         oc_traces.push({
           x: [LQL],
           y: [beta],
           mode: "markers+text",
           marker: { color: "purple", size: 8 },
-          text: [`(${LQL.toFixed(3)}, ${beta.toFixed(3)})`],
+          text: [`(${LQL.toFixed(4)}, ${beta.toFixed(4)})`],
           textposition: "bottom right",
           name: "LQL marker"
         });
